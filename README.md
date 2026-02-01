@@ -17,14 +17,8 @@ AWS EC2 Instance Connect's browser-based terminal doesn't support standard keybo
 
 ## Installation Instructions
 
-### Step 1: Download/Prepare the Extension
+### Step 1:Clone the Repo
 
-1. You should have a folder named `aws-terminal-shortcuts` with these files:
-   - `manifest.json`
-   - `content.js`
-   - `icon16.png`
-   - `icon48.png`
-   - `icon128.png`
 
 ### Step 2: Load Extension in Chrome/Opera
 
