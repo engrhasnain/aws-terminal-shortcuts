@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "AWS Terminal Copy-Paste Helper",
+  "version": "1.0",
+  "description": "Enable Ctrl+Shift+C and Ctrl+Shift+V shortcuts in AWS EC2 Instance Connect terminal",
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://*.console.aws.amazon.com/*",
+    "https://console.aws.amazon.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.console.aws.amazon.com/*",
+        "https://console.aws.amazon.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png"
+  }
+}

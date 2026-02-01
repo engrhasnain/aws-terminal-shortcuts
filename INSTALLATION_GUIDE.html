@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Terminal Copy-Paste Helper - Installation Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #FF9900 0%, #FF6B00 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .step {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #FF9900;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #FF9900;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 15px;
+        }
+        
+        .step h2 {
+            display: inline-block;
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .step p {
+            color: #666;
+            line-height: 1.6;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #68d391;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+            overflow-x: auto;
+        }
+        
+        .shortcut-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .shortcut {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #e2e8f0;
+            text-align: center;
+        }
+        
+        .shortcut-key {
+            background: #FF9900;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .shortcut-desc {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        .alert {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+        
+        .alert-info {
+            background: #d1ecf1;
+            border-color: #17a2b8;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .footer {
+            background: #2d3748;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #FF9900;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #FF6B00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 AWS Terminal Copy-Paste Helper</h1>
+            <p>Enable Ctrl+Shift+C and Ctrl+Shift+V shortcuts in AWS EC2 Instance Connect</p>
+        </div>
+        
+        <div class="content">
+            <div class="alert alert-success">
+                <strong>✓ What This Extension Does:</strong><br>
+                Adds keyboard shortcuts (Ctrl+Shift+C and Ctrl+Shift+V) to AWS EC2 Instance Connect terminal, eliminating the need to right-click for copy/paste operations. Regular Ctrl+C still works for stopping processes!
+            </div>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <h2>Prepare Your Files</h2>
+                <p>Make sure you have all the extension files in one folder:</p>
+                <ul class="feature-list">
+                    <li>manifest.json</li>
+                    <li>content.js</li>
+                    <li>icon16.png, icon48.png, icon128.png</li>
+                    <li>README.md (optional)</li>
+                </ul>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <h2>Open Extensions Page</h2>
+                <p>Navigate to your browser's extensions page:</p>
+                <div class="code-block">
+                    Chrome: chrome://extensions/<br>
+                    Opera: opera://extensions/
+                </div>
+                <p>Just copy the URL above and paste it in your browser's address bar.</p>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                <h2>Enable Developer Mode</h2>
+                <p>Look for a toggle switch labeled "Developer mode" in the top-right corner of the extensions page and turn it ON.</p>
+                <div class="alert alert-info">
+                    <strong>💡 Tip:</strong> This is required to load unpacked extensions. It's completely safe and only affects your ability to load local extensions.
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">4</span>
+                <h2>Load the Extension</h2>
+                <p>Click the "Load unpacked" button that appears after enabling Developer mode, then:</p>
+                <ul class="feature-list">
+                    <li>Navigate to the folder containing your extension files</li>
+                    <li>Select the folder (not individual files)</li>
+                    <li>Click "Select Folder" or "Open"</li>
+                </ul>
+                <p>The extension will now appear in your extensions list!</p>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">5</span>
+                <h2>Grant Permissions</h2>
+                <p>The extension needs clipboard permissions to work. When prompted:</p>
+                <ul class="feature-list">
+                    <li>Allow clipboard read permission (for paste)</li>
+                    <li>Allow clipboard write permission (for copy)</li>
+                </ul>
+                <div class="alert">
+                    <strong>⚠️ Privacy Note:</strong> These permissions only work on AWS Console pages. Your clipboard data stays completely private and local to your browser.
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">6</span>
+                <h2>Test It Out!</h2>
+                <p>Navigate to your AWS EC2 Instance Connect terminal:</p>
+                <ol style="margin-left: 20px; margin-top: 10px;">
+                    <li style="margin: 10px 0;">Go to AWS Console → EC2 → Instances</li>
+                    <li style="margin: 10px 0;">Select an instance and click "Connect"</li>
+                    <li style="margin: 10px 0;">Choose "EC2 Instance Connect"</li>
+                    <li style="margin: 10px 0;">Wait for the terminal to load</li>
+                    <li style="margin: 10px 0;">Look for "AWS Terminal shortcuts active!" notification</li>
+                </ol>
+            </div>
+            
+            <div class="step" style="border-left-color: #28a745; background: #f0fdf4;">
+                <h2>📋 Keyboard Shortcuts</h2>
+                <div class="shortcut-box">
+                    <div class="shortcut">
+                        <div class="shortcut-key">Ctrl + Shift + C</div>
+                        <div class="shortcut-desc">Copy selected text from terminal</div>
+                    </div>
+                    <div class="shortcut">
+                        <div class="shortcut-key">Ctrl + Shift + V</div>
+                        <div class="shortcut-desc">Paste text into terminal</div>
+                    </div>
+                </div>
+                <div class="alert" style="margin-top: 20px;">
+                    <strong>💡 Important:</strong> Regular Ctrl+C still works as the interrupt signal to stop processes in the terminal. This extension uses Ctrl+Shift combinations to avoid conflicts!
+                </div>
+            </div>
+            
+            <div class="step">
+                <h2>🔧 Troubleshooting</h2>
+                <ul class="feature-list">
+                    <li><strong>Extension not working?</strong> Make sure it's enabled in chrome://extensions/</li>
+                    <li><strong>No notifications?</strong> Refresh the AWS terminal page</li>
+                    <li><strong>Paste not working?</strong> Check clipboard permissions in extension details</li>
+                    <li><strong>Still issues?</strong> Press F12 and check Console tab for error messages</li>
+                </ul>
+            </div>
+            
+            <div class="alert alert-success">
+                <strong>🎉 You're All Set!</strong><br>
+                Your AWS terminal now supports standard copy-paste shortcuts. This will save you countless right-clicks and significantly speed up your DevOps workflow!
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Version 1.0</strong> | Created for DevOps Engineers</p>
+            <p style="margin-top: 10px; opacity: 0.8;">
+                For detailed documentation, see README.md<br>
+                For quick reference, see QUICK_START.txt
+            </p>
+        </div>
+    </div>
+</body>
+</html>

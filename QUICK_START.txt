@@ -1,0 +1,60 @@
+╔════════════════════════════════════════════════════════════════╗
+║     AWS TERMINAL COPY-PASTE HELPER - QUICK START GUIDE        ║
+╚════════════════════════════════════════════════════════════════╝
+
+🚀 INSTALLATION (5 Minutes)
+
+Step 1: Extract Files
+  ✓ Make sure all files are in one folder:
+    - manifest.json
+    - content.js  
+    - icon16.png, icon48.png, icon128.png
+    - README.md
+
+Step 2: Open Browser Extensions
+  Chrome:  chrome://extensions/
+  Opera:   opera://extensions/
+
+Step 3: Enable Developer Mode
+  ✓ Toggle "Developer mode" ON (top-right corner)
+
+Step 4: Load Extension
+  ✓ Click "Load unpacked" button
+  ✓ Select the folder containing all extension files
+  ✓ Extension will appear in your list - Done! ✓
+
+Step 5: Test It!
+  1. Go to AWS EC2 Instance Connect terminal
+  2. Wait for "AWS Terminal shortcuts active!" notification
+  3. Select some text and press Ctrl+Shift+C
+  4. Press Ctrl+Shift+V to paste
+  
+🎯 USAGE
+
+  Ctrl+Shift+C  →  Copy selected text
+  Ctrl+Shift+V  →  Paste text
+  
+  Note: Regular Ctrl+C still works for stopping processes!
+
+📌 TIPS
+
+  • Refresh AWS page after installing extension
+  • Grant clipboard permissions when prompted
+  • Works only on AWS Console pages (for security)
+  • Notifications confirm each copy/paste action
+
+⚠️ TROUBLESHOOTING
+
+  Not working?
+  ✓ Check extension is enabled at chrome://extensions/
+  ✓ Refresh the AWS terminal page
+  ✓ Wait 2-3 seconds for terminal to fully load
+  ✓ Check F12 console for error messages
+  
+  Permission errors?
+  ✓ Go to extension details → check permissions
+  ✓ Make sure clipboard read/write are allowed
+
+═══════════════════════════════════════════════════════════════
+
+Need help? Check the detailed README.md file!
