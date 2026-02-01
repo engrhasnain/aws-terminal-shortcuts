@@ -23,8 +23,6 @@ AWS EC2 Instance Connect's browser-based terminal doesn't support standard keybo
    - `manifest.json`
    - `content.js`
    - `icon16.png`
-   - `icon48.png`
-   - `icon128.png`
 
 ### Step 2: Load Extension in Chrome/Opera
 
